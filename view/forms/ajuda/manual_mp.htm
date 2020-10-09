@@ -1,0 +1,267 @@
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<title>Ajuda SIGAV</title>
+<link type="text/css" rel="stylesheet" href="files/manual.css"  />
+<script language="javascript" src="files/manual.js" type="text/javascript"></script>
+</head>
+<script type='text/javascript'>
+<!--
+var BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString(this.dataBrowser) || 'An unknown browser';
+		this.version = this.searchVersion(navigator.userAgent)
+			|| this.searchVersion(navigator.appVersion)
+			|| 'an unknown version';
+		this.OS = this.searchString(this.dataOS) || 'an unknown OS';
+	},
+	searchString: function (data) {
+		for (var i=0;i<data.length;i++)	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			if (dataString) {
+				if (dataString.indexOf(data[i].subString) != -1)
+					return data[i].identity;
+			}
+			else if (dataProp)
+				return data[i].identity;
+		}
+	},
+	searchVersion: function (dataString) {
+		var index = dataString.indexOf(this.versionSearchString);
+		if (index == -1) return;
+		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	},
+	dataBrowser: [
+		{
+			string: navigator.userAgent,
+			subString: 'Chrome',
+			identity: 'Chrome'
+		},
+		{ 	string: navigator.userAgent,
+			subString: 'OmniWeb',
+			versionSearch: 'OmniWeb/',
+			identity: 'OmniWeb'
+		},
+		{
+			string: navigator.vendor,
+			subString: 'Apple',
+			identity: 'Safari',
+			versionSearch: 'Version'
+		},
+		{
+			prop: window.opera,
+			identity: 'Opera'
+		},
+		{
+			string: navigator.vendor,
+			subString: 'iCab',
+			identity: 'iCab'
+		},
+		{
+			string: navigator.vendor,
+			subString: 'KDE',
+			identity: 'Konqueror'
+		},
+		{
+			string: navigator.userAgent,
+			subString: 'Firefox',
+			identity: 'Firefox'
+		},
+		{
+			string: navigator.vendor,
+			subString: 'Camino',
+			identity: 'Camino'
+		},
+		{		// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			subString: 'Netscape',
+			identity: 'Netscape'
+		},
+		{
+			string: navigator.userAgent,
+			subString: 'MSIE',
+			identity: 'Explorer',
+			versionSearch: 'MSIE'
+		},
+		{
+			string: navigator.userAgent,
+			subString: 'Gecko',
+			identity: 'Mozilla',
+			versionSearch: 'rv'
+		},
+		{ 		// for older Netscapes (4-)
+			string: navigator.userAgent,
+			subString: 'Mozilla',
+			identity: 'Netscape',
+			versionSearch: 'Mozilla'
+		}
+	],
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: 'Win',
+			identity: 'Windows'
+		},
+		{
+			string: navigator.platform,
+			subString: 'Mac',
+			identity: 'Mac'
+		},
+		{
+			   string: navigator.userAgent,
+			   subString: 'iPhone',
+			   identity: 'iPhone/iPod'
+	    },
+		{
+			string: navigator.platform,
+			subString: 'Linux',
+			identity: 'Linux'
+		}
+	]
+
+};
+BrowserDetect.init();
+
+// -->
+</script>
+<script>
+var item='';
+function tparams(ancor)
+{
+	if (!ancor)
+	{
+		parameters=document.location.search
+	}
+	else
+	{
+		parameters=window.location.href
+		parameters=parameters.substring(parameters.indexOf('?',0))
+	}
+	parameters=unescape(parameters.substring(1,parameters.length)+'&')
+
+	this.params=new Array()
+	i=0
+	while (parameters.indexOf('&',0)!=-1)
+	{
+		al=this.params.length
+		this.params[al]=new Array()
+	
+		tmp=parameters.substring(0,parameters.indexOf('&',0))
+		parameters=parameters.substring(parameters.indexOf('&',0)+1)
+
+		if (tmp.indexOf('=')!=-1)
+		{
+			this.params[al].command=tmp.substring(0,tmp.indexOf('='))
+			this.params[al].value=tmp.substring(tmp.indexOf('=')+1)
+		} else
+
+		{
+			this.params[al].command=tmp
+			this.params[al].value=''
+		}
+	}
+
+	return this
+}
+tparams.prototype.getValue=function(param)
+{
+	value=''
+	param=param.toLowerCase()
+	al=this.params.length
+	for (var i=0; i<al; i+=1) if (this.params[i].command==param) value=this.params[i].value
+	return value
+}
+
+params=new tparams(false)
+if (params.getValue('item')!='')
+{
+	item=params.getValue('item');
+}
+
+params2=new tparams(true)
+if (params2.getValue('item')!='')
+{
+	item2=params2.getValue('item');
+}
+
+
+function getItem()
+{
+	if (typeof(item) != 'undefined')
+		return item;
+	else
+		return '';
+}
+
+function getItem2()
+{
+	if (typeof(item2) != 'undefined')
+		return item2;
+	else
+		return '';
+}
+
+function resizeMainDiv()
+{
+	switch(BrowserDetect.browser+BrowserDetect.version)
+	{
+		case 'Explorer8':
+			winW = document.body.offsetWidth;		
+			winH = document.body.offsetHeight;
+			difW = 12;
+			difH = 60;
+		break;
+		case 'Explorer7':
+			winW = document.body.offsetWidth;		
+			winH = document.body.offsetHeight;
+			difW = 22;
+			difH = 42;		
+		break;
+		case 'Firefox3':
+		case 'Firefox2':
+			winW = window.innerWidth;
+			winH = window.innerHeight;
+			difW = 12;
+			difH = 60;
+		break;
+		default:
+			winW = window.innerWidth;
+			winH = window.innerHeight;
+			difW = 12;
+			difH = 60;
+		break;
+	}
+	
+	document.getElementById('principal').style.width = (winW-difW) + 'px';
+	document.getElementById('principal').style.height = (winH-difH) + 'px';
+}
+
+</script>
+<body bgcolor="#F6F6F6" scroll="no" onLoad="resizeMainDiv()" onResize="resizeMainDiv()">
+
+<div id="principal">
+
+<!-- inicio do cabeçalho do manual -->
+<iframe name="faixa" id="idcima" scrolling="no" noresize src="manual_mpcima.htm" target="indice"  frameborder="0"></iframe>
+<!-- fim do cabeçalho do manual -->
+
+<div id="idmanual">
+
+<!-- inicio do iframe menu arvore -->
+<!--<iframe id="idindice" name="indice" src="manual_mpindice.htm" noresize frameborder="0" scrolling="auto"></iframe>-->
+<!-- fim do iframe menu arvore -->
+
+<!-- div da barra de largura -->
+<!--<div id="idbarra"><img src="files/img/fundo_barra.png" onClick="javascript:resizewindow();" /></div>-->
+<!-- fim da barra de largura -->
+
+<iframe id="idframe" name="frame" src="manual_mpframe.htm" noresize frameborder="0" scrolling="no"></iframe>
+
+</div>
+</div>
+
+</body>
+</html>

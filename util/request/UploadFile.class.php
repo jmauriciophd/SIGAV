@@ -1,0 +1,241 @@
+<?php
+/**
+ * @author Gedalias Freitas da Costa
+ * @copyright GPL-2008
+ * @access public
+ * @package request
+ *
+ * @info
+ * Classe especialista implementada unicamente para encapsular atributos de
+ * um arquivo que for enviado por um cliente web.
+ * Inicialmente desenvolvida para ser integrada a uma classe UploadRequest
+ * mas tambem pode ser receber um array com as mesmas informacoes de $_FILES;
+ *
+ * @deficiencia
+ *
+ * Altamente especialista, embora possível nao recomendado seu uso isolado.
+ * Foi implementada dessa forma para suprir a incapacidade do PHP de funcionar com
+ * classes internas (inner classe) fato que é possivel com outras linguagens
+ * como java.
+ * Infelizmente se usada de forma isolada so pode processar um arquivo por vez,
+ * enquanto com o uso de UploadRequest podemos gerenciar, qualquer quantidade de
+ * arquivos.
+ */
+class UploadFile{
+    private $uploadKey       = null;
+    private $extension= null;
+    private static $allowed  = null;
+    /**
+     * deve receber um array com as informações de cada
+     * arquivo passado para upload encapsulando assim
+     * o conhecimento sobre apenas um arquivo, segue a uma interface
+     * comum e bem estrutura. Aumenta a granularidade e dá a
+     * possibiliade de usar um iterator sem ter que aumentar a interface
+     * de UploadRequest que só deve saber processar a requisição.
+     *
+     * @param array $fileProperties
+     * @param array $allowed
+     * @throws Exception
+     */
+    public function __construct(array $fileProperties,array $allowed){
+        self::$allowed = $allowed;
+        //verifica se e' um array e se traz a estrutura interna de $_FILES
+        if(is_array($fileProperties) && array_key_exists("name",$fileProperties)){
+            foreach ($fileProperties as $key => $value) {
+                $this->uploadKey[$key]  = $value;
+            }
+        }else{
+            throw new Exception("Parâmetro incorreto no construtor de UploadFile().");
+        }
+    }
+
+    /**
+     * Recupera o nome do arquivo enviado pelo cliente web.
+     * @return string
+     */
+    public function getFilename(){
+        return $this->uploadKey["name"]  ;
+    }
+    /**
+     *Recupera o nome do arquivo enviado pelo cliente web
+     * codificado em UTF-8, necessario em alguns sistemas de arquivos
+     * @return string
+     */
+    public function UTF8EncodeFilename(){
+        return utf8_encode($this->filename["name"]);
+    }
+
+    /**
+     * Retorna o tipo MIME do arquivo enviado, é interessante para
+     * facilitar facilmente bloqueios por tipo de arquivos, ou mesmo conversoes
+     * de MIMETYPE
+     *
+     * @return string
+     */
+    public function getType(){
+        //o uso de is_uploaded_file e' de extrema importancia para os dias atuais
+        //e' uma regra de seguranca
+        if(is_uploaded_file($this->getTempFilename())){
+            return $this->uploadKey["type"] ;
+        }
+    }
+
+    /**
+     * Retorna verdeiro se algum erro  foi gerado durante o processo
+     * de recebimento do arquivo.
+     *
+     * @return boolean
+     */
+    public function hasError(){
+        if ($this->uploadKey["error"]> 0){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Retorna uma mensagem de erro gerado durante o processo
+     * de recebimento do arquivo.
+     *
+     * @return string;
+     */
+    public function getErrorMessage(){
+        switch ($this->uploadKey["error"]){
+            case 1:
+                return "Arquivo ".$this->getFilename()." excedeu limite máximo permitido pelo servidor.";
+                break;
+                 
+            case 2:
+                return "Arquivo ".$this->getFilename()." excedeu limite de permitido.";
+                break;
+                 
+            case 3:
+                return "Arquivo ".$this->getFilename()." parcialmente carregado.";
+                break;
+
+            case 4:
+                return "Não houve upload do arquivo " .$this->getFilename() .".";
+                break;
+                 
+            default:
+                return "Upload efetuado com sucesso.";
+                break;
+
+        };
+
+    }
+    /**
+     * Recupera o nome temporário do arquivo,
+     * que é usado somente para manutenção interna.
+     * Este método ode ser privado, mas como o PHP
+     * apresenta livremente este parametro, resolvi
+     * deixálo publico;
+     *
+     * @return string
+     */
+    public function getTempFilename(){
+        //verifica se o o nome passado é mesmo um arquivo
+        if(is_file($this->uploadKey["tmp_name"])){
+            return $this->uploadKey["tmp_name"] ;
+        }else{
+            $this->uploadKey["error"]=4;
+            throw new Exception("Tentiva inválida. Não é um arquivo.\n".
+            $this->getErrorMessage());
+        }
+    }
+    /**
+     * Recupera o tamanho real do arquivo em bytes.
+     *
+     * @return integer
+     */
+    public function getFileSize(){
+        //testa se este arquivo está mesmo vindo de um upload
+        if(is_uploaded_file($this->getTempFilename())){
+            return $this->uploadKey["size"] ;
+        }else{
+            $this->uploadKey["error"]=4;
+            throw new Exception("Seu sistema provavelmente está sofrendo uma ação de um usuário malicioso.\n".
+            $this->getErrorMessage());
+        }
+    }
+    /**
+     * Move o arquivo enviado para o lugar de destino.
+     * Ao mover exclui o arquivo temporário
+     * @param string $destiny
+     * @param integer $index
+     */
+    public function moveFileTo($destiny){
+        //testa se este arquivo está mesmo vindo de um upload
+        if(is_uploaded_file($this->getTempFilename())){
+            //tenta transferir para o destino e se sair algo errado lança uma exceção.
+            if(!move_uploaded_file($this->getTempFilename(),$destiny)){
+                throw new Exception("Não foi possível transferir o arquivo carregado.");
+            }
+        }else{
+            $this->uploadKey["error"]=4;
+            throw new Exception("Seu sistema provavelmente está sofrendo uma ação de um usuário malicioso.\n".
+            $this->getErrorMessage());
+        }
+    }
+    /**
+     * Recupera a extensão do arquivo.
+     *
+     * @return mixed
+     */
+    public function getExtension(){
+        if(is_null($this->extension)){
+            return false;
+        }
+        return $this->extension;
+    }
+
+    /**
+     *
+     * Faz um levantamento para decidir se pode ou nao fazer um upload
+     * para o tipo de arquivo passado no construtor.
+     *
+     *  @return boolean
+     *
+     */
+    public function canDoUpload(){
+        //calcula a primeira ocorrência de um ponto separador de extensão
+        //na ordem reversa
+        $startPos = strrpos($this->getFilename(),".");
+        $length = strlen($this->getFilename()) - $startPos;
+        //posiciona o ponteiro na posicao e recupera somente a
+        //extensao do arquivo.
+        $file_ext = substr($this->getFilename(),$startPos+1,$length) ;
+        //
+        $this->extension = $file_ext;
+        $notIn = 0;
+        $allowed=" ";
+        $yesYouCan="";
+        //agora está pronta para fazer uma verificaçao
+        //de padroes permitidos para upload, conforme desejado
+        if(is_array(self::$allowed)){
+            //entra numa iteracao, assim não será preciso criar os padrões necessários
+            //o objeto será capaz de se auto analizar se tornando polimórfico
+            //não haverá necessidade de reescrever para suportar novos tipo de extensões
+            foreach (self::$allowed as $allowed){
+                $yesYouCan .="*.$allowed ";
+                //Faz análise atraves de uma expressão regular simples
+                //e em caso de falha incrementa a variavel $notIn
+                if(!preg_match("/$allowed/",$file_ext) ){
+                    $notIn++;
+                }
+                //no final, se nenhuma extensão permitida for encontrada
+                //o valor de $notIn será igual ao tamanho do vetor passado
+                //com as extensões e entao lançara uma exceção
+                if($notIn == count(self::$allowed)){
+                    $this->uploadKey["error"]=4;
+                    $tipo_permitido = "Os tipos permitdos são: $yesYouCan;";
+                    throw new Exception("Um arquivo passado não é permitido pelo sistema!\n$tipo_permitido".
+                    $this->getErrorMessage());
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+}
+?>

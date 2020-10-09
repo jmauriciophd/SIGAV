@@ -1,0 +1,7 @@
+# This folder does not require access over HTTP
+# (the following directive denies access by default)
+
+# ErrorDocument 400 /sigav/config/erros/badrequest.html
+# ErrorDocument 401 /sigav/config/erros/authreqd.html
+ErrorDocument 403 /sigav/config/erros/accessDenied.php
+ErrorDocument 404 /sigav/config/erros/error-404.php

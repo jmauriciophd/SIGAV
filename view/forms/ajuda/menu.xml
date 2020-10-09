@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<tree id="0">
+<item text="Introdução" id="01-Introducao" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Introdução" id="01-Introducao/00-Introducao.htm"></item>
+	<item text="Menu do SIGAV" id="01-Introducao/01-MenuSIGAV.htm"></item>
+	<item text="Tela de Login" id="01-Introducao/02-TelaLogin.htm"></item>
+	
+</item>
+
+<item text="Cadastrar" id="02-Cadastrar" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Cadastro de Categoria de Usuário" id="02-Cadastrar/00-CadastroDeCategoriaDeVestuario.htm"></item>
+	<item text="Cadastro de Cliente" id="02-Cadastrar/01-CadastroDeCliente.htm"></item>
+	<item text="Cadastro de Funcionário" id="02-Cadastrar/02-CadastroDeFuncionario.htm"></item>
+	<item text="Cadastro de Fornecedor" id="02-Cadastrar/03-CadastroDeFornecedor.htm"></item>
+	<item text="Cadastro de Vestuário" id="02-Cadastrar/04-CadastroDeVestuario.htm"></item>
+</item>
+
+<item text="Alugar Vestuário" id="03-AlugarVestuario" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Alugar Vestuário" id="03-AlugarVestuario/00-AlugarVestuario.htm"></item>
+</item>
+
+<item text="Pagamentos" id="04-Pagamentos" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Pagamento de Aluguel" id="04-Pagamentos/00-PagamentoDeAluguel.htm"></item>
+	<item text="Pagamento de Fornecedor" id="04-Pagamentos/01-PagamentoDeFornecedor.htm"></item>
+	<item text="Pagamento de Funcionário" id="04-Pagamentos/02-PagamentoDeFuncionario.htm"></item>
+</item>
+
+<item text="Administrar Usuários" id="05-AdministrarUsuarios" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Cadastrar Perfil" id="05-AdministrarUsuarios/00-CadastrarPerfil.htm"></item>
+	<item text="Cadastrar usuário" id="05-AdministrarUsuarios/01-CadastrarUsuario.htm"></item>
+	<item text="Permissões de Acesso" id="05-AdministrarUsuarios/02-PermissoesDeAcesso.htm"></item>
+	<item text="Alterar Senha" id="05-AdministrarUsuarios/03-AlterarSenha.htm"></item>
+</item>
+
+<item text="Consultas" id="06-Consultas" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Consulta de Cliente" id="06-Consultas/00-ConsultaDeCliente.htm"></item>
+	<item text="Consulta de Aluguel" id="06-Consultas/01-ConsultaDeAluguel.htm"></item>
+	<item text="Consulta de Funcionário" id="06-Consultas/02-ConsultaDeFuncionario.htm"></item>
+	<item text="Consulta de Fornecedor" id="06-Consultas/03-ConsultaDeFornecedor.htm"></item>
+	<item text="Consulta de Vestuário" id="06-Consultas/04-ConsultaDeVestuario.htm"></item>
+    <item text="Consulta de Usuário" id="06-Consultas/05-ConsultaDeUsuario.htm"></item>
+</item>
+
+<item text="Relatórios" id="07-Relatorios" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+	<item text="Visão Geral" id="07-Relatorios/00-Overview.htm"></item>
+</item>	
+<item text="Ajuda" id="08-Ajuda" im0="folderClosed.gif" im1="folderOpen.gif" im2="folderClosed.gif">
+		<item text="Ajuda" id="08-Ajuda/00-Overview.htm"></item>
+</item>
+</tree>

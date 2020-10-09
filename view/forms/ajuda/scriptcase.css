@@ -1,0 +1,170 @@
+BODY {
+		font-family: Arial, Helvetica, sans-serif;
+        background-color: #FFFFFF;
+		background-image:url(img/bgmiolo.gif);
+		font-size: 12px;
+		margin-top:10x;
+		margin-left:10px;
+}
+
+ol {
+	letter-spacing: 0.3px;
+	list-style-type: none;
+	text-indent:15px;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+ul {
+	letter-spacing: 0.3px;
+	list-style-type: none;
+	text-indent:15px;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+
+li {
+	background-image: url(img/arrowSubMenu.gif);
+	background-repeat: no-repeat;
+/*	margin: 0px; */
+	margin-bottom:15px;
+}
+
+H1 {
+   font-size: 20px; 
+   font-family: Tahoma, Arial; 
+   font-weight: bold; text-transform:uppercase; 
+} 
+
+H2 {
+   font-size: 16px; 
+   font-family: Tahoma;
+   font-stretch:extra-condensed;   
+   font-weight: bold;
+}
+
+H3 {
+   font-size: 14px; 
+   font-family: Verdana; 
+   font-weight: bold; 
+}
+
+P {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size:12px;
+   text-align:justify;
+}
+
+TABLE {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	border-width:1px;
+	border-style:solid;
+	border-color:#cccccc;
+	background-color:#f8f8f8;
+	border-collapse:collapse;
+}
+
+TH {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+TD {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	vertical-align: top;
+	border-top-width:1px;
+	border-top-style:solid;
+	border-top-color:#EBEBEB;
+	border-right-color:#EBEBEB;
+	border-right-style:solid;
+	border-right-width:1px;
+    /*background-color: #E4F3FC ;*/
+}
+
+HR {
+   color: #0000AA;  
+}
+
+A {
+   color:#330099;
+}
+
+fieldset {
+padding-left:10px;
+padding-right:10px;
+width:90%;
+margin-left:45px;
+
+}
+
+
+.cabecalho1  { font-size: 18px; font-family: Arial; font-weight: bold }
+.cabecalho2  { font-size: 16px; font-family: Arial; font-weight: bold }
+.cabecalho3  { font-size: 16px; font-family: Arial; font-weight: bold }
+.normal      { font-size: 14px; font-family: Arial }
+
+.titulo      { font-size: 14px; font-family: Verdana; font-weight:bolder; }
+.subtitulo   { font-size: 12px; font-family: Verdana; font-weight:bolder; text-decoration:underline; }
+
+.macros      { font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif}
+.macros_tit  { font-size: 14px; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif}
+.quebra { page-break-after: always }
+.sob_figura { color: #666666; font-size:12px }
+.toptabela {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	width: 600px;
+border-width:thick;
+}
+
+.topth {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.toptd {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	vertical-align: middle;
+background-color:#e0e0e0;
+color:#FFFFFF;
+}
+
+
+.tahtd {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	vertical-align: middle;
+	background-color:#FFFFFF;
+}
+
+.toptr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.nota {
+    font-family: arial;
+	fonte-size:13px;
+	font-style:italic;
+	color:#330066;
+}
+
+.paragrafo{
+  width:70%;
+}
+
+.elevado{
+vertical-align:super;
+font-size:10px;
+}

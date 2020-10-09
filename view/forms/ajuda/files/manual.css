@@ -1,0 +1,71 @@
+/* CSS Document */
+
+body { margin: 0; padding: 0; }
+
+/* Verificar condicionais na pagina principal para IE */
+#principal { margin: 5px; }
+/* #principal { margin: 5px; height: 93.5%; } */
+/* #idmanual { width:99.5%; height:98%; border: 2px solid #DDDDDD } */
+/* - */
+
+#idcima { width:100%; height:46px; overflow:hidden; }
+
+#idframe {
+	width:100%; 
+	height:100%; 
+}
+
+/*
+#idindice {
+	width:24%; 
+	height:92%; 
+	float:left;
+	background-color:#DDDDDD;
+}
+
+#idbody {
+	width:75%; 
+	height:92%; 
+	float:right;
+	border:none;
+}
+
+#idbarra{
+	width:1%;
+	height:92%;
+	float:left;
+	position:relative;
+	background-image:url(img/bg_barra.png);
+	background-repeat:repeat-y;
+	text-align:center;
+	vertical-align:middle;
+}
+*/
+
+a:link        {
+font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #FFFFFF;
+}
+
+
+a:visited        {
+font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #FFFFFF;
+text-decoration: none;
+}
+
+a:hover{
+font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #F4F4F4;
+}
+
+a:active{
+font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #FFFFFF;
+text-decoration: none;
+
+}

@@ -1,0 +1,404 @@
+@CHARSET "ISO-8859-1";
+/** CSS Document 
+	Descrição: Documento CSS para estilizar o formulario de login do sistema
+	Autor: Rafael Dias
+	Data de Criação: 20/09/2012
+**/
+
+body {
+	/* background-image:url(../img/bkg_cinza.jpg);*/ 
+	background-repeat:repeat-x; 
+	margin:0;
+	padding:0;
+	font: 12px "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+h3 {
+	font-family: tahoma;
+	font-size: 12px;
+	color: #045B90;
+	font-weight: bold;
+}
+
+#corpo_pagina {
+	width:100%; 
+	margin:0 auto;
+}
+
+#topo{ background:url(../img/bkgTopo.jpg) right; height:60px;}
+
+#menu_horizontal {
+	width:100%; 
+	background:url(../img/bkg_menu.jpg); 
+	height:26px; 
+	background-repeat:repeat-x;
+}
+
+#centro_menu {
+	background:url(../img/bkg_menu.jpg); 
+	width:98%; 
+	background-repeat:repeat-x; 
+	height:24px;
+	float:left; 
+	position:absolute;
+	vertical-align:middle; 
+	padding-top:8px; 
+	font: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+.top-left, .top-right, .bottom-left, .bottom-right { 
+	background-image: url(../img/bkg_box_form.gif); /* CHANGE: path and name of your image */
+	height: 45px;       /* CHANGE: replace by the height of one of your corners (= 1/2 height of the image) */
+	font-size: 2px;    /* DNC: correction IE for height of the <div>'s */
+}
+.top-left, .bottom-left { 
+	margin-right: 45px; /* CHANGE: replace by the width of one of your corners */
+	}
+.top-right, .bottom-right { 
+	margin-left: 45px;  /* CHANGE: replace by the width of one of your corners */
+	margin-top: -45px;  /* CHANGE: replace by the height of one of your corners */
+}
+
+.top-right {
+	background-position: 100% 0;  
+	
+	
+	/* DNC: position right corner at right side, no vertical changes */
+}
+
+.bottom-left  { 
+	background-position: 0 -45px;    /* CHANGE: replace second number by negative height of one of your corners */
+}
+
+.bottom-right { 
+	background-position: 100% -45px; /* CHANGE: replace second number by negative height of one of your corners */
+}
+
+.inside {
+	border-left: 1px solid #c0c0c0; /* YCC: color & properties of the left-borderline */
+	border-right: 1px solid #c0c0c0;/* YCC: color & properties of the right-borderline */
+	background: #FFFFFF;            /* YCC: background-color of the inside */
+	color: #000000;                 /* YCC: default text-color of the inside */
+	padding-left: 16px;             /* YCC: all texts at some distance of the left border */
+	padding-right:10px;             /* YCC: all texts at some distance of the right border */
+	padding-bottom: 5px;
+}
+
+.notopgap    { margin-top: 0; }    /* DNC: to avoid splitting of the box */
+.nobottomgap { margin-bottom: 0; } /* DNC: to avoid splitting of the box */
+
+	
+.area_texto {
+font-size:11px; 
+font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+color: #000000; 
+width:250px; 
+height:100px;
+}
+
+.campo {
+font-size:11px; 
+font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color: #000000;  
+height:auto;
+}
+.textoNormal {
+font-size:11px; 
+font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color: #000000;  
+height:auto;
+}
+
+br{
+clear: left;
+}
+
+hr {
+border: 0.05em solid #FFFFFF;
+background-color:#FFFFFF;
+}
+
+label{
+/*float: left;*/
+width: 200px;
+margin-left: 5px;
+font-size:11px; 
+font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color:#045B90;
+font-weight:bold;
+}
+
+.label_campo {
+	float: left;
+	width: 200px;
+	margin-left: 5px;
+	font-size:11px; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color:#045B90;
+	font-weight:bold;
+}
+
+.label_campo_maior  {
+	float: left;
+	width: 250px;
+	margin-left: 5px;
+	font-size:11px; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color:#045B90;
+	font-weight:bold;
+}
+
+
+.floatLeft {position:absolute;left:424px; top:0px}
+
+.label_textarea{
+width: 200px;
+margin-left: 5px;
+font-size:11px; 
+font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color:#045B90;
+font-weight:bold;
+}
+
+.laterais{
+	border-left:solid 1px #c0c0c0;
+	border-right:solid 1px #c0c0c0;
+}
+
+#titulo_form {
+	font-family: tahoma;
+	font-size: 12px;
+	color: #045B90;
+	font-weight: bold;
+	padding-top:5px; 
+	font-family:tahoma; 
+	font-size:12px;
+}
+
+#seta_titulo_form {
+	padding-left:12px; 
+	padding-top:5px; 
+}
+
+#botoes {
+	padding-top:5px;
+	padding-left:200px;
+}
+
+.asterisco {
+color:#FF0000;
+}
+
+#mensagem {
+width:98%; 
+margin-bottom:15px; 
+margin-left:auto; 
+margin-right:auto; 
+background-color:#FFFFCC; 
+color:#FF0000; 
+font-family:tahoma, arial, verdana; 
+font-size:11px; 
+font-weight:bold; 
+border:#FF0000 1px solid; 
+vertical-align:middle; 
+padding-top:5px; 
+padding-bottom:5px; 
+padding-left:5px; 
+padding-right:5px;
+}
+
+#msgCampoObrigatorio {
+width:98%;
+margin-bottom:15px; 
+margin-left:auto; 
+margin-right:auto; 
+background-color:#FFFFCC; 
+color:#FF0000; 
+font-family:tahoma, arial, verdana; 
+font-size:11px; 
+font-weight:bold; 
+border:#FF0000 1px solid; 
+vertical-align:middle; 
+padding-top:5px; 
+padding-bottom:5px; 
+padding-left:5px; 
+padding-right:5px;
+}
+
+.img_erro {
+vertical-align:middle; 
+padding-right:5px;
+}
+
+.textoform {
+	font-family:tahoma, arial, verdana; 
+	font-size:11px; 
+	font-weight:bold; 	
+}
+
+#tela_login {
+padding-top:10px;
+}
+
+#login_form {
+width:230px;
+margin-left:auto;
+margin-right:auto;
+margin-top:10px;
+float:left; 
+margin-left:40px;
+}
+
+#recuperar_senha_form {
+width:400px;
+margin-left:auto;
+margin-right:auto;
+margin-top:10px;
+float:left; 
+margin-left:20px;
+}
+
+#info_sistema{
+width:500px; 
+float:left; 
+margin-left:100px; 
+font-family:tahoma; 
+font-size:11px; 
+line-height:14px;
+text-align:justify;
+}
+
+.label_usuario_login {
+width:70px; 
+padding-bottom:10px;
+}
+
+.label_senha_login {
+width:70px; 
+padding-bottom:10px;
+}
+
+#cpf{
+position: relative;
+left:15px;
+width:100px;
+}
+
+#senha{
+position: relative;
+left:3px;
+width:100px;
+}
+
+#email {
+position: relative;
+left:3px;
+width: 280px;	
+}
+
+.botao_login { 
+	padding-left:35px;
+	
+}
+	
+.nomeSistema{
+	padding-left:120px;
+	padding-top:20px;
+	color:#FFFFFF;
+	font-size:20px;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	background-image:url(../img/Topo_eJud_esquerda.jpg) no-repeat; height:60px;
+	
+	/*filter: Shadow(Color=#000000, 	
+			Direction=135, 
+			Strength=3);*/
+}
+
+.nomeSistemaSigav{
+	float:left;
+	padding-left:20px;
+	padding-top:20px;
+	color:#FFFFFF;
+	font-size:20px;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	
+	/*filter: Shadow(Color=#000000, 	
+			Direction=135, 
+			Strength=3);*/
+}
+
+.none {
+	display:none;
+}
+
+.block {
+	display:block;
+}
+
+#titulo_form {
+	font-family: tahoma;
+	font-size: 12px;
+	color: #045B90;
+	font-weight: bold;
+	padding-top:5px; 
+	font-family:tahoma; 
+	font-size:12px;
+}
+
+#botoes {
+	padding-top:5px;
+	padding-left:200px;
+}
+
+.popupAjax{
+	z-index:2;  
+	display:none;
+	position:absolute;
+	top:40%;
+	left:30%;
+	margin-left:-100px;
+	margin-top:100px;padding:10px;
+	border:1px solid #d0d0d0;
+	background-color: #FFFFFF;
+}
+
+#backgroundPopup{  
+	display:none;  
+	position:fixed;  
+	_position:absolute; /* hack for internet explorer 6*/  
+	height:100%;  
+	width:100%;  
+	top:0;  
+	left:0;  
+	background:#FFFFFF;  
+	border:1px solid #cecece;  
+	z-index:1;  
+}
+
+.campo { 
+	padding-left:5px;
+	padding-bottom: 5px;
+}
+
+#msgSucess {
+	border: 1px solid #6C3 !important;
+	background: none repeat scroll 0 0 #EEFFF9 !important;
+	padding: 2px;
+	font-weight: bold;
+	font-size: 11px;
+    text-align: center; 
+	color: #008B00; 
+}
+
+#msgError {
+	 border: 1px solid #FF5757 !important;
+	 background: none repeat scroll 0 0 #FFEFEE !important;
+	 padding: 2px;
+	 font-weight: bold;
+	 font-size: 11px;
+     text-align: center;
+	 color: #FF5757; 
+}

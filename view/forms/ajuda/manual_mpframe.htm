@@ -1,0 +1,18 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+<script>
+function carregaBodyFrame()
+{
+	if (parent.getItem() == '')
+		window.open('manual_mpbody.htm', 'body');
+}
+</script>
+<frameset cols="250,*" frameborder="1" border="3" framespacing="2" onLoad="carregaBodyFrame();">
+    <frame name="indice" src="manual_mpindice.htm">
+    <frame name="body" src="">
+    <noframes></noframes>
+</frameset>
+</body>
+</html>

@@ -1,0 +1,456 @@
+@CHARSET "ISO-8859-1";
+/** CSS Document 
+	Descrição: Documento CSS para estilizar o sistema em geral
+	Autor: Rafael Dias
+	Data de Criação: 20/09/2012
+**/
+body {
+	/* background-image:url(../img/bkg_cinza.jpg);*/ 
+	background-repeat:repeat-x; 
+	margin:0;
+	padding:0;
+	font:Tahoma, Arial, Helvetica, sans-serif, normal;
+	font-size:11px;
+}
+
+h3 {
+	font-family: tahoma;
+	font-size: 12px;
+	color: #045B90;
+	font-weight: bold;
+}
+
+#nome_sistema{
+float:left;
+padding-top:18px;
+padding-left:14px;
+}
+
+#logo_sigav {
+ position:absolute;
+ left:350px;
+ top:150px;  
+ margin-right:7px;
+}
+.logosigav{
+ width:670px;
+ height:335px;
+}
+
+/* Estrutura - DIVs */
+
+#corpo_pagina {
+	width:100%; 
+	margin:0 auto;
+}
+
+#topo{
+	 width:100%;
+	 background:url(../img/bkgTopo.jpg) right; height:60px;
+	 }
+
+#menu_horizontal {
+	width:100%; 
+	background:url(../img/bkg_menu.jpg); 
+	height:26px; 
+	background-repeat:repeat-x;
+	position:absolute;
+	top:60px;
+	transparent; 
+	text-decoration: none;  
+	visibility: visible;  
+}
+#centro_menu {
+	background:url(../img/bkg_menu.jpg); 
+	width:100%; 
+	background-repeat:repeat-x; 
+	height:24px;
+	float:left;
+	vertical-align:middle; 
+	padding-top:8px; 
+	font: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+#sair {
+	vertical-align:top; 
+ 	color: #ff0000;
+	font: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	position: absolute;
+	left: 1275px;
+	height:10px;
+	float:right;
+	margin-top: -3px;
+}
+#horas{
+	position: absolute;
+    left: 1180px;
+	top:5px;
+	color: red;
+	}
+#texto_horas{
+	position: absolute;
+	top: 5px;
+	left: 1050px;
+	width:155px;
+	}
+#chanfro_esquerdo {
+	background:url(../img/chanfro_esquerdo.jpg); 
+	height:26px; 
+	width:7px; 
+	background-repeat:no; 
+	float:left; 
+	border:0; 
+}
+#chanfro_direito {
+	background:url(../img/chanfro_direito.jpg); 
+	height:26px; 
+	width:7px; 
+	background-repeat:repeat-x;   
+	float:right;
+}
+
+/* Box formulário */
+#box_form {
+	width:98%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+.area_texto {
+font-size:11px; 
+font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+color: #000000; 
+width:250px; 
+height:100px;
+}
+
+.caixa_selecao {
+font-size:11px; 
+font-family: Tahoma,Verdana, Arial, Helvetica, sans-serif; 
+color: #000000; 
+HEIGHT: 19px;  
+}
+
+.campo {
+font-size:11px; 
+font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color: #000000;  
+height:auto;
+}
+
+.textoNormal {
+font-size:11px; 
+font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color: #000000;  
+height:auto;
+}
+
+br{
+clear: left;
+}
+
+hr {
+border: 0.05em solid #FFFFFF;
+background-color:#FFFFFF;
+}
+
+label{
+/*float: left;*/
+width: 200px;
+margin-left: 5px;
+font-size:11px; 
+font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color:#045B90;
+font-weight:bold;
+}
+
+.label_campo {
+	float: left;
+	width: 200px;
+	margin-left: 5px;
+	font-size:11px; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color:#045B90;
+	font-weight:bold;
+}
+
+.label_campo_maior  {
+	float: left;
+	width: 250px;
+	margin-left: 5px;
+	font-size:11px; 
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	color:#045B90;
+	font-weight:bold;
+
+}
+
+.floatLeft {position:absolute;left:424px; top:0px}
+
+.label_textarea{
+width: 200px;
+margin-left: 5px;
+font-size:11px; 
+font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+color:#045B90;
+font-weight:bold;
+}
+
+.laterais{
+	border-left:solid 1px #c0c0c0;
+	border-right:solid 1px #c0c0c0;
+}
+
+#titulo_form {
+	font-family: tahoma;
+	font-size: 12px;
+	color: #045B90;
+	font-weight: bold;
+	padding-top:5px; 
+	font-family:tahoma; 
+	font-size:12px;
+}
+
+#seta_titulo_form {
+	padding-left:12px; 
+	padding-top:5px; 
+}
+
+#botoes {
+	padding-top:5px;
+	padding-left:200px;
+}
+
+.asterisco {
+color:#FF0000;
+}
+
+#mensagem {
+width:98%; 
+margin-bottom:15px; 
+margin-left:auto; 
+margin-right:auto; 
+background-color:#FFFFCC; 
+color:#FF0000; 
+font-family:tahoma, arial, verdana; 
+font-size:11px; 
+font-weight:bold; 
+border:#FF0000 1px solid; 
+vertical-align:middle; 
+padding-top:5px; 
+padding-bottom:5px; 
+padding-left:5px; 
+padding-right:5px;
+}
+
+#msgCampoObrigatorio {
+width:98%; 
+margin-bottom:15px; 
+margin-left:auto; 
+margin-right:auto; 
+background-color:#FFFFCC; 
+color:#FF0000; 
+font-family:tahoma, arial, verdana; 
+font-size:11px; 
+font-weight:bold; 
+border:#FF0000 1px solid; 
+vertical-align:middle; 
+padding-top:5px; 
+padding-bottom:5px; 
+padding-left:5px; 
+padding-right:5px;
+}
+
+.img_erro {
+vertical-align:middle; 
+padding-right:5px;
+}
+
+.textoform {
+	font-family:tahoma, arial, verdana; 
+	font-size:11px; 
+	font-weight:bold; 	
+}
+
+#form {
+    position:absolute;
+    left:15%;
+    width:66%;
+   	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	float:left; 
+	margin-left:50px;
+	text-transform: uppercase;
+}
+
+#mensagem_sucesso {
+width:98%; 
+margin-bottom:15px; 
+margin-left:auto; 
+margin-right:auto; 
+background-color:#FFFFCC; 
+color:#008000; 
+font-family:tahoma, arial, verdana; 
+font-size:11px; 
+font-weight:bold; 
+border:#008000 1px solid; 
+vertical-align:middle; 
+padding-top:5px; 
+padding-bottom:5px; 
+padding-left:5px; 
+padding-right:5px;
+}
+	
+.nomeSistemaSigav{
+	position:absolute;
+	width:700px;
+	float:left;
+	padding-left:20px;
+	padding-top:20px;
+	color:#FFFFFF;
+	font-size:20px;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	
+	/*filter: Shadow(Color=#000000, 	
+			Direction=135, 
+			Strength=3);*/
+}
+
+.infoUsuario{
+	position:absolute;
+	left:500px;
+	width:670px;
+	float:left;
+	padding-left:140px;
+	padding-top:38px;
+	color:#FFFFFF;
+	font-size:12px;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-align: right;
+	
+	/*filter: Shadow(Color=#000000, 	
+			Direction=135, 
+			Strength=3);*/
+}
+
+.none {
+	display:none;
+}
+
+.block {
+	display:block;
+}
+
+#titulo_form {
+	font-family: tahoma;
+	font-size: 12px;
+	color: #045B90;
+	font-weight: bold;
+	padding-top:5px; 
+	font-family:tahoma; 
+	font-size:12px;
+}
+
+#seta_titulo_form {
+	padding-left:12px; 
+	padding-top:5px; 
+}
+
+#botoes {
+	padding-top:5px;
+	padding-left:200px;
+}
+
+#botoesSemPesquisa{
+	padding-top:5px;
+	padding-left:10px;
+}
+
+.popupAjax{
+	z-index:2;  
+	display:none;
+	position:absolute;
+	top:2%;
+	left:20%;
+	margin-left:-100px;
+	margin-top:10px;
+	padding:10px;
+	border:1px solid #d0d0d0;
+	background-color: #FFFFFF;
+}
+
+#backgroundPopup{  
+	position:fixed;  
+	_position:absolute; /* hack for internet explorer 6*/  
+	height:100%;  
+	width:100%;  
+	top:0;  
+	left:0;  
+	background:#FFFFFF;  
+	border:1px solid #cecece;  
+	z-index:1;  
+}  
+
+#opacidade {
+  position:absolute;
+  top:0px;
+  left:0;
+  right:0; 
+  bottom:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+
+#opacidadeTela {
+  position:absolute;
+  height: 900px;
+  top:0px;
+  left:0;
+  right:0; 
+  bottom:0;
+  z-index:9000;
+  background:rgba(0,0,0, 0.7);
+  display:none;
+}
+
+
+.divMensagemSucessoFormPrincipal {
+	width:98%; 
+	margin-bottom:15px; 
+	margin-left:auto; 
+	margin-right:auto; 
+	background-color:#FFFFCC; 
+	color:#008000; 
+	font-family:tahoma, arial, verdana; 
+	font-size:11px; 
+	font-weight:bold; 
+	border:#008000 1px solid; 
+	vertical-align:middle; 
+	padding-top:5px; 
+	padding-bottom:5px; 
+	padding-left:5px; 
+	padding-right:5px;
+}
+
+.divMensagemFormPrincipal {
+	width:98%; 
+	margin-bottom:15px; 
+	margin-left:auto; 
+	margin-right:auto; 
+	background-color:#FFFFCC; 
+	color:#FF0000; 
+	font-family:tahoma, arial, verdana; 
+	font-size:11px; 
+	font-weight:bold; 
+	border:#FF0000 1px solid; 
+	vertical-align:middle; 
+	padding-top:5px; 
+	padding-bottom:5px; 
+	padding-left:5px; 
+	padding-right:5px;
+}
